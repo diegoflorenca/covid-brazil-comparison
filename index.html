@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Compare Deaths</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="top">
+          <h1>COVID-19 Brasil</h1>
+          <img
+            src="./images/brazil-flag.svg"
+            alt="Bandeira do Brasil em preto e branco"
+          />
+        </div>
+        <div id="actual-situation">
+          <div class="data">
+            <h2>casos confirmados</h2>
+            <h3 class="confirmed">999.999.999</h3>
+          </div>
+          <div class="data">
+            <h2>casos recuperados</h2>
+            <h3 class="recovered">999.999.999</h3>
+          </div>
+          <div class="data">
+            <h2>óbitos confirmados</h2>
+            <h3 class="deaths">999.999.999</h3>
+          </div>
+        </div>
+        <div id="swipe-up"></div>
+      </header>
+      <section id="titanic">
+        <span class="icon">titanic boat</span>
+        <p><span class="deaths"></span> vezes mais mortos!</p>
+      </section>
+      <section id="tam-flight">
+        <span class="icon">Voo TAM 3054</span>
+        <p><span class="deaths"></span> vezes mais mortos!</p>
+      </section>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const url = "https://covid19-brazil-api.now.sh/api/report/v1/brazil";
+      const confirmed = document.querySelector(".confirmed");
+      const recovered = document.querySelector(".recovered");
+      const deaths = document.querySelector(".deaths");
+      const titanic = document.querySelector("#titanic .deaths");
+      const airplane = document.querySelector("#tam-flight .deaths");
+      let totalConfirmed = 0;
+      let totalRecovered = 0;
+      let totalDeaths = 0;
+
+      axios
+        .get(url)
+        .then((response) => {
+          const allData = response.data.data;
+
+          confirmed.innerHTML = allData.cases;
+          recovered.innerHTML = allData.recovered;
+          deaths.innerHTML = allData.deaths;
+          titanic.innerHTML = Math.round(totalDeaths / 1500);
+          airplane.innerHTML = Math.round(totalDeaths / 100);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

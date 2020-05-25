@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+#wrapper {
+  margin: 0 auto;
+  border: #fff solid 1px;
+}
+
+#wrapper header {
+  height: 100vh;
+  background-image: url("../images/vinheta.svg"), url("../images/sky.jpg");
+  background-position: top center, top left;
+  background-size: cover, cover;
+  padding: 5vh;
+}
+
+#wrapper header #top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+}
+
+#wrapper header h1 {
+  font-size: 1em;
+  font-weight: normal;
+  width: 75px;
+}
+
+#wrapper header #actual-situation {
+  height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5vh 0;
+}
+
+#wrapper header #actual-situation .data {
+  text-align: center;
+}
+
+#wrapper header #actual-situation .data h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+#wrapper header #actual-situation .data h3 {
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+#wrapper header #swipe-up {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../images/swipe-up.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#wrapper section {
+  height: 100vh;
+}
+
+#wrapper section .icon {
+  font-size: 3rem;
+}
+/*# sourceMappingURL=style.css.map */
